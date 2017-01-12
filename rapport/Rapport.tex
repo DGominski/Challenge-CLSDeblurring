@@ -1,0 +1,215 @@
+% Template for ICIP-2013 paper; to be used with:
+%          spconf.sty  - ICASSP/ICIP LaTeX style file, and
+%          IEEEbib.bst - IEEE bibliography style file.
+% --------------------------------------------------------------------------
+\documentclass{article}
+\usepackage{spconf,amsmath,graphicx}
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+% Example definitions.
+% --------------------
+\def\x{{\mathbf x}}
+\def\L{{\cal L}}
+
+% Title.
+% ------
+\title{D\'{E}CONVOLUTION D'IMAGES FLOUES}
+%
+% Single address.
+% ---------------
+%\name{Author(s) Name(s)\thanks{Thanks to XYZ agency for funding.}}
+%\address{Author Affiliation(s)}
+%
+
+
+\name{\qquad Julien Guichon \qquad Dimitri Gominski}
+
+\address{}
+	
+\begin{document}
+%\ninept
+%
+\maketitle
+%
+\begin{abstract}
+	
+	Image deblurring is a famous inverse problem in image processing, and can be frustrating because of the lack of information to retrieve the original image, often noisy and/or blurred with complex camera motion. It implies that the solution has to make assumptions on the acquisition system, and has to be robust against the heavy impact noise can have through the various treatments.
+	This reports study the performance and the limitations of the Constrained Least Squares (CLS ) approach. We also show compare it to other famous algorithm, in order to determine under which conditions it should be use.
+	
+\end{abstract}
+%
+
+%
+\section{Introduction}
+\label{sec:intro}
+	Le
+
+\section{\'{E}TUDE BIBLIOGRAPHIQUE CHRONOLOGIQUE}
+\label{sec:format}
+
+	Dès 1985, T. Tsukiyama et Y. Shirai [5] ont proposé une technique rudimentaire d'identification humaine en travaillant avec l'intensité pixel par pixel.
+
+	En 1997 est proposée au MIT [4] une technique innovante de description des formes basée sur les ondelettes de Haar, associée à un classifieur SVM. L'idée de séparer descripteur et classifieur est depuis devenue un standard dans ce domaine.
+
+	En 1998, cette technique est perfectionnée [6] pour la rendre universelle en incluant un apprentissage le plus complet possible avec un set de données dédiées, pour permettre l'exécution dans des conditions variées. L'article introduit également la notion d'échelle variable pour la fenêtre de détection.
+
+	Dalal \& Triggs [2] publient en 2005 un article de référence dans le domaine (+6000 citations). Ils expliquent une méthode complète, d'implémentation relativement simple, pour mettre en place une chaîne de détection de performances correctes. Leur méthode repose sur l'histogramme des gradients orientés pour décrire la forme d'un piéton, et la décision se fait avec une SVM (support vector machine) linéaire.
+
+	Depuis, de nombreuses nouvelles approches ont été proposées, citons entre autres l'utilisation des informations de couleur [8], du mouvement [10], du bootstrapping (réutilisation des résultats, re-training) [8], de très larges sets de données d'apprentissages acquises par data-mining [11]  \textit{etc.}, avec la problématique du temps de calcul toujours au coeur du problème [9].
+
+
+\section{CONTEXTE}
+\label{sec:pagestyle}
+
+	Dans le cadre de l'étude de faisabilité d'un algorithme de détection en temps réel à 95\% de précision, nous disposons d'un set de données d'entrées dans des conditions relativement favorables (voir Figure 1). La caméra fournissant ces images est fixe, les seuls évènements d'occlusion concernent les croisements de piétons, et la zone concernée est une section de route fréquentée uniquement par des piétons, ce qui limite les risques de confusion avec du mobilier urbain ou des véhicules. Les seules contraintes sont l'orientation légèrement verticale de la caméra (ce qui limite la surface identifiable du corps humain) et la profondeur de champ qui implique de devoir gérer les changements d'échelle.
+
+\section{TYPE-STYLE AND FONTS}
+\label{sec:typestyle}
+
+To achieve the best rendering both in printed proceedings and electronic proceedings, we
+strongly encourage you to use Times-Roman font.  In addition, this will give
+the proceedings a more uniform look.  Use a font that is no smaller than nine
+point type throughout the paper, including figure captions.
+
+In nine point type font, capital letters are 2 mm high.  {\bf If you use the
+smallest point size, there should be no more than 3.2 lines/cm (8 lines/inch)
+vertically.}  This is a minimum spacing; 2.75 lines/cm (7 lines/inch) will make
+the paper much more readable.  Larger type sizes require correspondingly larger
+vertical spacing.  Please do not double-space your paper.  TrueType or
+Postscript Type 1 fonts are preferred.
+
+The first paragraph in each section should not be indented, but all the
+following paragraphs within the section should be indented as these paragraphs
+demonstrate.
+
+\section{MAJOR HEADINGS}
+\label{sec:majhead}
+
+Major headings, for example, "1. Introduction", should appear in all capital
+letters, bold face if possible, centered in the column, with one blank line
+before, and one blank line after. Use a period (".") after the heading number,
+not a colon.
+
+\subsection{Subheadings}
+\label{ssec:subhead}
+
+Subheadings should appear in lower case (initial word capitalized) in
+boldface.  They should start at the left margin on a separate line.
+ 
+\subsubsection{Sub-subheadings}
+\label{sssec:subsubhead}
+
+Sub-subheadings, as in this paragraph, are discouraged. However, if you
+must use them, they should appear in lower case (initial word
+capitalized) and start at the left margin on a separate line, with paragraph
+text beginning on the following line.  They should be in italics.
+
+\section{PRINTING YOUR PAPER}
+\label{sec:print}
+
+Print your properly formatted text on high-quality, 8.5 x 11-inch white printer
+paper. A4 paper is also acceptable, but please leave the extra 0.5 inch (12 mm)
+empty at the BOTTOM of the page and follow the top and left margins as
+specified.  If the last page of your paper is only partially filled, arrange
+the columns so that they are evenly balanced if possible, rather than having
+one long column.
+
+In LaTeX, to start a new column (but not a new page) and help balance the
+last-page column lengths, you can use the command ``$\backslash$pagebreak'' as
+demonstrated on this page (see the LaTeX source below).
+
+\section{PAGE NUMBERING}
+\label{sec:page}
+
+Please do {\bf not} paginate your paper.  Page numbers, session numbers, and
+conference identification will be inserted when the paper is included in the
+proceedings.
+
+\section{ILLUSTRATIONS, GRAPHS, AND PHOTOGRAPHS}
+\label{sec:illust}
+
+Illustrations must appear within the designated margins.  They may span the two
+columns.  If possible, position illustrations at the top of columns, rather
+than in the middle or at the bottom.  Caption and number every illustration.
+All halftone illustrations must be clear black and white prints.  Colors may be
+used, but they should be selected so as to be readable when printed on a
+black-only printer.
+
+Since there are many ways, often incompatible, of including images (e.g., with
+experimental results) in a LaTeX document, below is an example of how to do
+this \cite{Lamp86}.
+
+\section{FOOTNOTES}
+\label{sec:foot}
+
+Use footnotes sparingly (or not at all!) and place them at the bottom of the
+column on the page on which they are referenced. Use Times 9-point type,
+single-spaced. To help your readers, avoid using footnotes altogether and
+include necessary peripheral observations in the text (within parentheses, if
+you prefer, as in this sentence).
+
+% Below is an example of how to insert images. Delete the ``\vspace'' line,
+% uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
+% with a suitable PostScript file name.
+% -------------------------------------------------------------------------
+\begin{figure}[htb]
+
+\begin{minipage}[b]{1.0\linewidth}
+  \centering
+%  \vspace{2.0cm}
+  \centerline{(a) Result 1}\medskip
+\end{minipage}
+%
+\begin{minipage}[b]{.48\linewidth}
+  \centering
+%  \vspace{1.5cm}
+  \centerline{(b) Results 3}\medskip
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+  \centering
+%  \vspace{1.5cm}
+  \centerline{(c) Result 4}\medskip
+\end{minipage}
+%
+\caption{Example of placing a figure with experimental results.}
+\label{fig:res}
+%
+\end{figure}
+
+
+% To start a new column (but not a new page) and help balance the last-page
+% column length use \vfill\pagebreak.
+% -------------------------------------------------------------------------
+%\vfill
+%\pagebreak
+
+\section{COPYRIGHT FORMS}
+\label{sec:copyright}
+
+You must include your fully completed, signed IEEE copyright release form when
+form when you submit your paper. We {\bf must} have this form before your paper
+can be published in the proceedings.
+
+\section{REFERENCES}
+\label{sec:ref}
+
+List and number all bibliographical references at the end of the
+paper. The references can be numbered in alphabetic order or in
+order of appearance in the document. When referring to them in
+the text, type the corresponding reference number in square
+brackets as shown at the end of this sentence \cite{C2}. An
+additional final page (the fifth page, in most cases) is
+allowed, but must contain only references to the prior
+literature.
+
+% References should be produced using the bibtex program from suitable
+% BiBTeX files (here: strings, refs, manuals). The IEEEbib.bst bibliography
+% style file from IEEE produces unsorted bibliography list.
+% -------------------------------------------------------------------------
+\bibliographystyle{IEEEbib}
+\bibliography{strings,refs}
+
+\end{document}
