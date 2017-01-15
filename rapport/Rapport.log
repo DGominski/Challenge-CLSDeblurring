@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  15 JAN 2017 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  15 JAN 2017 14:52
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -595,14 +595,24 @@ Package pdftex.def Info: Img/blurkernel_linear.png used on input line 88.
 
 
 
- <./Img/blurkernel_gauss.png> <./Img/blurkernel_linear.png>] [2]
-(Rapport.bbl) [3
+ <./Img/blurkernel_gauss.png> <./Img/blurkernel_linear.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
+
+ []
+
+
+Overfull \hbox (0.69342pt too wide) in paragraph at lines 113--114
+\OT1/ptm/m/n/10 ment avec la d[]ecomposition SVD qui four-nit la d[]ecompositio
+n
+ []
+
+[2] (Rapport.bbl) [3
 
 ] (Rapport.aux) ) 
 Here is how much of TeX's memory you used:
  3605 strings out of 493333
  47436 string characters out of 3139189
- 124202 words of memory out of 3000000
+ 125202 words of memory out of 3000000
  7077 multiletter control sequences out of 15000+200000
  16216 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -618,7 +628,7 @@ msfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on Rapport.pdf (3 pages, 131822 bytes).
+Output written on Rapport.pdf (3 pages, 134106 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

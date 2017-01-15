@@ -1,3 +1,7 @@
 ﻿[1] A. M. Deshpande and S. Patnaik, “Comparative Study and Qualitative-Quantitative Investigations of Several Motion Deblurring Algorithms”, IJCA Proceedings on International Conference and workshop on Emerging Trends in Technology (ICWET), vol. 2, (2011), pp. 27-34.
 [2] C. Hansen, J. G. Nagy, D. P. O'Leary, "Deblurring Images: Matrices, Spectra, and Filtering", Chapter 1 :The Image Deblurring Problem, Society for Industrial and Applied Mathematics, (2017), 12 pages
 [3] Wikipedia, "Wiener deconvolution", https://en.wikipedia.org/wiki/Wiener_deconvolution
+[4] T. Grenier, "Image Processing & Analysis", INSA GE
+[5] M. Donatelli., "A multigrid for image deblurring with Tikhonov regularization.", Numerical Lin. Alg. with Applic. 12 (8): 715-729 (2005)
+[6] Fall, "Basics of Image Deblurring", Math 561, 2006
+[7] Q. Shan, J. Jia, and A. Agarwala, "High-quality motion deblurring from a single image," ACM Transactions on Graphics (SIGGRAPH), vol. 27, no. 3, pp. 73:1-73:10, Aug. 2008
