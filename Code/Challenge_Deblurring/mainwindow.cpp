@@ -117,7 +117,7 @@ void MainWindow::okClick(void)
     deblurring::deblurringParamStruct delubrringParam;
 
     std::ostringstream tilte;
-
+    std::ostringstream tilteSave;
     if(ui->radioButtonGauss->isChecked())
     {
         delubrringParam.flagMotion = 0;
@@ -130,7 +130,7 @@ void MainWindow::okClick(void)
         delubrringParam.sigma = ui->doubleSpinBoxSigma->value();
 
         tilte << "Output : " << "ga = " << delubrringParam.gamma << "  sig = " << delubrringParam.sigma << "  W.size = " << delubrringParam.ksize;
-
+        tilteSave << "ga=" << delubrringParam.gamma << "_sig=" << delubrringParam.sigma << "_Wsize=" << delubrringParam.ksize<<".bmp";
 
         if((delubrringParam.gamma == 0) | (delubrringParam.sigma == 0))
         {
@@ -160,6 +160,7 @@ void MainWindow::okClick(void)
         delubrringParam.sigma = 0;
 
         tilte << "Output : " << "ga = " << delubrringParam.gamma << "  angleDeg = " << delubrringParam.angleDeg << "  W.size = " << delubrringParam.ksize;
+        tilteSave << "ga=" << delubrringParam.gamma << "_angleDeg=" << delubrringParam.angleDeg << "_Wsize=" << delubrringParam.ksize<<".bmp";
 
         flagOk = 1;
     }
@@ -179,6 +180,8 @@ void MainWindow::okClick(void)
 
         //show the image
         imshow("Original Image", img);
+
+        imwrite(tilteSave.str(),outComputeCvt);
 
         // Wait until user press some key
         waitKey(0);
