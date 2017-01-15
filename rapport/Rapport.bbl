@@ -1,13 +1,40 @@
 \begin{thebibliography}{1}
 
-\bibitem{Lamp86}
-A.B. Smith, C.D. Jones, and E.F. Roberts,
-\newblock ``Article title,''
-\newblock {\em Journal}, vol. 62, pp. 291--294, January 1920.
+\bibitem{ref2}
+D.~P.~O'Leary C.~Hansen, J. G.~Nagy.
+\newblock Deblurring images: Matrices, spectra, and filtering.
+\newblock {\em Society for Industrial and Applied Mathematics}, page~12, 2017.
 
-\bibitem{C2}
-C.D. Jones, A.B. Smith, and E.F. Roberts,
-\newblock ``Article title,''
-\newblock in {\em Proceedings Title}. IEEE, 2003, vol.~II, pp. 803--806.
+\bibitem{ref1}
+A.~M. Deshpande and S.~Patnaik.
+\newblock Comparative study and qualitative-quantitative investigations of
+  several motion deblurring algorithms.
+\newblock {\em IJCA Proceedings on International Conference and workshop on
+  Emerging Trends in Technology (ICWET)}, 2:27--34, 2011.
+
+\bibitem{ref5}
+M.~Donatelli.
+\newblock A multigrid for image deblurring with tikhonov regularization.
+\newblock {\em Numerical Lin. Alg. with Applic. 12 (8)}, pages 715--729, 2005.
+
+\bibitem{ref6}
+Fall.
+\newblock Basics of image deblurring.
+\newblock {\em Math 561}, 2006.
+
+\bibitem{ref4}
+T.~Grenier.
+\newblock Image processing and analysis.
+\newblock {\em INSA GE}.
+
+\bibitem{ref7}
+J.~Jia Q.~Shan and A.~Agarwala.
+\newblock High-quality motion deblurring from a single image.
+\newblock {\em ACM Transactions on Graphics (SIGGRAPH)}, 27:73:1--73:10, Aug.
+  2008.
+
+\bibitem{ref3}
+Wikipedia.
+\newblock Wiener deconvolution.
 
 \end{thebibliography}

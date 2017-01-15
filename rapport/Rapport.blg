@@ -1,4 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Rapport.aux
-The style file: IEEEbib.bst
+The style file: plain.bst
 Database file #1: strings.bib
-Database file #2: refs.bib
+Name 1 in "Q. Shan, J. Jia, and A. Agarwala" has a comma at the end for entry ref7
+while executing---line 1049 of file plain.bst
+Warning--empty year in ref4
+Name 1 in "Q. Shan, J. Jia, and A. Agarwala" has a comma at the end for entry ref7
+while executing---line 1090 of file plain.bst
+Warning--empty journal in ref3
+Warning--empty year in ref3
+(There were 2 error messages)

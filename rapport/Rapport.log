@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  15 JAN 2017 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  15 JAN 2017 21:38
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -464,38 +464,71 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (Rapport.aux)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen117
+\captionmargin@=\dimen118
+\captionwidth=\dimen119
+\caption@tempdima=\dimen120
+\caption@indent=\dimen121
+\caption@parindent=\dimen122
+\caption@hangindent=\dimen123
+Package caption Info: The definition of \@makecaption has been changed,
+(caption)             frenchb will NOT customize it.
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip 10pt \setbox \@
+tempboxa \hbox {#1. #2} \ifdim \wd \@tempboxa >\hsize #1. #2\par \else \hbox to
+\hsize {\hfil \box \@tempboxa \hfil } \fi .
+\c@ContinuedFloat=\count105
+)
+\c@subfigure=\count106
+\c@subtable=\count107
+) (Rapport.aux)
 \openout1 = `Rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 31.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 28.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
-\scratchdimen=\dimen117
+\scratchcounter=\count108
+\scratchdimen=\dimen124
 \scratchbox=\box28
-\nofMPsegments=\count106
-\nofMParguments=\count107
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count108
-\MPscratchDim=\dimen118
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen125
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks24
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
@@ -542,39 +575,41 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \degres on input line 31.
+LaTeX Info: Redefining \degres on input line 28.
 
 
 Package frenchb.ldf Warning: Figures' and tables' captions might look like
 (frenchb.ldf)                `Figure 1:' which is wrong in French.
 (frenchb.ldf)                Check your class or packages to change this;
-(frenchb.ldf)                reported on input line 31.
+(frenchb.ldf)                reported on input line 28.
 
-LaTeX Info: Redefining \dots on input line 31.
-LaTeX Info: Redefining \up on input line 31.
+LaTeX Info: Redefining \dots on input line 28.
+LaTeX Info: Redefining \up on input line 28.
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French.
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 31.
+(frenchb.ldf)                of your document, on input line 28.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 34.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 
-Overfull \hbox (9.97343pt too wide) in paragraph at lines 49--50
+Overfull \hbox (9.97343pt too wide) in paragraph at lines 46--47
 []\OT1/ptm/m/n/10 Le trai-te-ment de d[]efloutage re-vient en termes math[]emat
 iques
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 52--53
+Underfull \hbox (badness 1742) in paragraph at lines 49--50
 \OT1/ptm/m/n/10 d'un syst[]eme d'[]equations, suf-fit []a re-trou-ver exac-te-m
 ent
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 72--73
+Underfull \hbox (badness 1097) in paragraph at lines 68--69
 [][]\OT1/ptm/m/n/10 a des per-tur-ba-tions op-tiques lors du pas-sage des
  []
 
@@ -582,69 +617,137 @@ Underfull \hbox (badness 1097) in paragraph at lines 72--73
 File: Img/blurkernel_gauss.png Graphic file (type png)
 
 <use Img/blurkernel_gauss.png>
-Package pdftex.def Info: Img/blurkernel_gauss.png used on input line 80.
+Package pdftex.def Info: Img/blurkernel_gauss.png used on input line 76.
 (pdftex.def)             Requested size: 79.04591pt x 78.82007pt.
 
 <Img/blurkernel_linear.png, id=3, 170.13562pt x 170.13562pt>
 File: Img/blurkernel_linear.png Graphic file (type png)
 
 <use Img/blurkernel_linear.png>
-Package pdftex.def Info: Img/blurkernel_linear.png used on input line 88.
+Package pdftex.def Info: Img/blurkernel_linear.png used on input line 84.
 (pdftex.def)             Requested size: 81.66415pt x 81.66415pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 
  <./Img/blurkernel_gauss.png> <./Img/blurkernel_linear.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
 
-Overfull \hbox (0.69342pt too wide) in paragraph at lines 113--114
+Overfull \hbox (0.69342pt too wide) in paragraph at lines 108--109
 \OT1/ptm/m/n/10 ment avec la d[]ecomposition SVD qui four-nit la d[]ecompositio
 n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
 
  []
 
 
-Overfull \hbox (4.79384pt too wide) in paragraph at lines 150--151
+Overfull \hbox (4.79384pt too wide) in paragraph at lines 144--145
 \OT1/ptm/m/n/10 se-lon le r[]esultat voulu, ou par cal-cul en sa-tis-fai-sant l
 a contrainte
  []
 
-[2] (Rapport.bbl) [3] (Rapport.aux) ) 
+
+Underfull \hbox (badness 1033) in paragraph at lines 149--150
+\OT1/ptm/m/n/10 en pro-po-sant une in-ter-face gra-phique pour im-por-ter des
+ []
+
+<Img/MLbefore.png, id=16, 385.44pt x 385.44pt>
+File: Img/MLbefore.png Graphic file (type png)
+ <use Img/MLbefore.png>
+Package pdftex.def Info: Img/MLbefore.png used on input line 159.
+(pdftex.def)             Requested size: 115.63289pt x 115.63289pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Img/MLafterg001.png, id=17, 385.44pt x 385.44pt>
+File: Img/MLafterg001.png Graphic file (type png)
+ <use Img/MLafterg001.png>
+Package pdftex.def Info: Img/MLafterg001.png used on input line 166.
+(pdftex.def)             Requested size: 115.63289pt x 115.63289pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Img/MLafterg0001.png, id=18, 385.44pt x 385.44pt>
+File: Img/MLafterg0001.png Graphic file (type png)
+ <use Img/MLafterg0001.png>
+Package pdftex.def Info: Img/MLafterg0001.png used on input line 173.
+(pdftex.def)             Requested size: 115.63289pt x 115.63289pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2]
+Underfull \hbox (badness 1540) in paragraph at lines 181--182
+[]\OT1/ptm/m/n/10 l'[]evolution de $\OML/cmm/m/it/10 $ \OT1/ptm/m/n/10 met en 
+[]evidence le com-pro-mis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Overfull \hbox (4.1642pt too wide) in paragraph at lines 187--188
+\OT1/ptm/m/n/10 ci-dessous un ta-bleau re-grou-pant l'er-reur qua-dra-tique moy
+enne
+ []
+
+<Img/tabmse.png, id=27, 594.72188pt x 143.78719pt>
+File: Img/tabmse.png Graphic file (type png)
+ <use Img/tabmse.png>
+Package pdftex.def Info: Img/tabmse.png used on input line 191.
+(pdftex.def)             Requested size: 237.88454pt x 57.51385pt.
+
+<Img/tabpsnr.png, id=28, 594.72188pt x 143.78719pt>
+File: Img/tabpsnr.png Graphic file (type png)
+ <use Img/tabpsnr.png>
+Package pdftex.def Info: Img/tabpsnr.png used on input line 200.
+(pdftex.def)             Requested size: 237.88454pt x 57.51385pt.
+
+<Img/echec.png, id=29, 385.44pt x 385.44pt>
+File: Img/echec.png Graphic file (type png)
+ <use Img/echec.png>
+Package pdftex.def Info: Img/echec.png used on input line 211.
+(pdftex.def)             Requested size: 154.17326pt x 154.17326pt.
+ [3 <./Img/MLbefore.png> <./Img/MLafterg001.png> <./Img/MLafterg0001.png> <./Im
+g/tabmse.png> <./Img/tabpsnr.png> <./Img/echec.png>] (Rapport.bbl) [4] (Rapport
+.aux) ) 
 Here is how much of TeX's memory you used:
- 3603 strings out of 493333
- 47413 string characters out of 3139189
- 125202 words of memory out of 3000000
- 7075 multiletter control sequences out of 15000+200000
+ 4726 strings out of 493333
+ 67760 string characters out of 3139189
+ 147429 words of memory out of 3000000
+ 8183 multiletter control sequences out of 15000+200000
  16216 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,30p,511b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
-ps/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8
-a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rapport.pdf (3 pages, 138127 bytes).
+ 42i,7n,40p,578b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+urw/times/utmri8a.pfb>
+Output written on Rapport.pdf (4 pages, 1381027 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -7,11 +7,8 @@
 \usepackage[frenchb]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{subcaption}
 
-% Example definitions.
-% --------------------
-\def\x{{\mathbf x}}
-\def\L{{\cal L}}
 
 % Title.
 % ------
@@ -64,7 +61,6 @@
 	
 
 \section{Floutages usuels}
-\label{sec:format}
 
 	Le floutage peut être dû : 
 	\begin{itemize}
@@ -95,7 +91,6 @@
 	
 
 \section{Approches classiques - bibliographie}
-\label{sec:pagestyle}
 
 	Plusieurs méthodes ont été proposées pour trouver une estimation correcte $\hat f$ de l'image d'origine $f$ à partir de la sortie $g$, en supposant le noyau de floutage $h$ connu.
 	
@@ -123,7 +118,6 @@
 	
 	
 \section{Approche Constrained Least Squares}
-\label{sec:typestyle}
 
 	Très similaire au filtre de Wiener, la méthode Constrained Least Squares, sous la contrainte $||G - H \hat{F}||^2 = ||N||^2$, vise à minimiser la quantité :
 	$$\sum\limits_{i=0}^{M-1} \sum\limits_{i=0}^{N-1} \big[\nabla ^2 f(x,y)]^2 $$
@@ -149,132 +143,98 @@
 	
 	$\gamma$ permet d'ajuster un compromis entre le bruit et la précision du défloutage. Son réglage peut se faire à l'aveugle selon le résultat voulu, ou par calcul en satisfaisant la contrainte sus-citée. 
 
-\section{MAJOR HEADINGS}
-\label{sec:majhead}
 
-Major headings, for example, "1. Introduction", should appear in all capital
-letters, bold face if possible, centered in the column, with one blank line
-before, and one blank line after. Use a period (".") after the heading number,
-not a colon.
+\section{Contexte d'application}
 
-\subsection{Subheadings}
-\label{ssec:subhead}
+	Nous implémentons cet algorithme CLS en langage C++, en proposant une interface graphique pour importer des images, choisir le noyau de floutage à considérer pour la déconvolution (linéaire/gaussien) et les paramètres associés (angle, longueur pour le linéaire, taille et sigma pour le gaussien), et visualiser les résultats.
+	
+	Le traitement repose sur la bibliothèque OpenCV (licence libre), qui propose des méthodes pour la manipulation de fichiers d'image et les opérations de base pour le traitement d'image.
 
-Subheadings should appear in lower case (initial word capitalized) in
-boldface.  They should start at the left margin on a separate line.
- 
-\subsubsection{Sub-subheadings}
-\label{sssec:subsubhead}
+\section{Application et résultats}
 
-Sub-subheadings, as in this paragraph, are discouraged. However, if you
-must use them, they should appear in lower case (initial word
-capitalized) and start at the left margin on a separate line, with paragraph
-text beginning on the following line.  They should be in italics.
+	Ci-dessus une démonstration des résultats de l'algorithme CLS sur une situation correspondant à un floutage linéaire, avec présence de bruit.
+	
+	\begin{figure}[!h]
+		\begin{center}			
+			\includegraphics[scale=0.3]{Img/MLbefore}
+		\end{center}
+		\caption{Floutage linéaire d'angle 45, longueur 10}
+	\end{figure}
 
-\section{PRINTING YOUR PAPER}
-\label{sec:print}
+	\begin{figure}[!h]
+	\begin{center}			
+		\includegraphics[scale=0.3]{Img/MLafterg001}
+	\end{center}
+	\caption{Résultat après traitement CLS, $\gamma = 0.01$}
+	\end{figure}
 
-Print your properly formatted text on high-quality, 8.5 x 11-inch white printer
-paper. A4 paper is also acceptable, but please leave the extra 0.5 inch (12 mm)
-empty at the BOTTOM of the page and follow the top and left margins as
-specified.  If the last page of your paper is only partially filled, arrange
-the columns so that they are evenly balanced if possible, rather than having
-one long column.
+	\begin{figure}[!h]
+	\begin{center}			
+		\includegraphics[scale=0.3]{Img/MLafterg0001}
+	\end{center}
+	\caption{Résultat après traitement CLS, $\gamma = 0.001$}
+	\end{figure}
 
-In LaTeX, to start a new column (but not a new page) and help balance the
-last-page column lengths, you can use the command ``$\backslash$pagebreak'' as
-demonstrated on this page (see the LaTeX source below).
-
-\section{PAGE NUMBERING}
-\label{sec:page}
-
-Please do {\bf not} paginate your paper.  Page numbers, session numbers, and
-conference identification will be inserted when the paper is included in the
-proceedings.
-
-\section{ILLUSTRATIONS, GRAPHS, AND PHOTOGRAPHS}
-\label{sec:illust}
-
-Illustrations must appear within the designated margins.  They may span the two
-columns.  If possible, position illustrations at the top of columns, rather
-than in the middle or at the bottom.  Caption and number every illustration.
-All halftone illustrations must be clear black and white prints.  Colors may be
-used, but they should be selected so as to be readable when printed on a
-black-only printer.
-
-Since there are many ways, often incompatible, of including images (e.g., with
-experimental results) in a LaTeX document, below is an example of how to do
-this \cite{Lamp86}.
-
-\section{FOOTNOTES}
-\label{sec:foot}
-
-Use footnotes sparingly (or not at all!) and place them at the bottom of the
-column on the page on which they are referenced. Use Times 9-point type,
-single-spaced. To help your readers, avoid using footnotes altogether and
-include necessary peripheral observations in the text (within parentheses, if
-you prefer, as in this sentence).
-
-% Below is an example of how to insert images. Delete the ``\vspace'' line,
-% uncomment the preceding line ``\centerline...'' and replace ``imageX.ps''
-% with a suitable PostScript file name.
-% -------------------------------------------------------------------------
-\begin{figure}[htb]
-
-\begin{minipage}[b]{1.0\linewidth}
-  \centering
-%  \vspace{2.0cm}
-  \centerline{(a) Result 1}\medskip
-\end{minipage}
-%
-\begin{minipage}[b]{.48\linewidth}
-  \centering
-%  \vspace{1.5cm}
-  \centerline{(b) Results 3}\medskip
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.48\linewidth}
-  \centering
-%  \vspace{1.5cm}
-  \centerline{(c) Result 4}\medskip
-\end{minipage}
-%
-\caption{Example of placing a figure with experimental results.}
-\label{fig:res}
-%
-\end{figure}
+	Deux phénomènes sont mis en évidence :
+	\begin{itemize}
+		\item l'image traitée perd en luminosité
+		\item l'évolution de $\gamma$ met en évidence le compromis bruit/défloutage\\ 
+	\end{itemize}
+	
+	Dans cet exemple, $\gamma = 0.01$ semble être le meilleur compromis.
+	\newpage
+	
+	Pour caractériser les performances de l'algorithme CLS, ci-dessous un tableau regroupant l'erreur quadratique moyenne (MSE, Mean Square Error) par rapport à l'image nette sur diverses situations, avec diverses valeurs de gamma.
+	
+	\begin{figure}[!h]
+		\begin{center}			
+			\includegraphics[scale=0.4]{Img/tabmse}
+		\end{center}
+		\caption{Batterie de tests, mesure de la MSE}
+	\end{figure}
+	
+	Idem pour le PSNR (Peak Signal to Noise Ratio), qui estime le rapport signal/bruit :
+	
+	\begin{figure}[!h]
+		\begin{center}			
+			\includegraphics[scale=0.4]{Img/tabpsnr}
+		\end{center}
+		\caption{Batterie de tests, mesure du PSNR}
+	\end{figure}
 
 
-% To start a new column (but not a new page) and help balance the last-page
-% column length use \vfill\pagebreak.
-% -------------------------------------------------------------------------
-%\vfill
-%\pagebreak
+	Nous n'obtenons qu'un seul cas d'amélioration au sens de la MSE et du PSNR, dans le cas du floutage gaussien très bruité (taille 10, $\sigma = 3$, puissance du bruit : 30 dbW) pour $\gamma = 0.1$.
+	Pour exemple, ci-dessous le cas du défloutage du mouvement linéaire (taille 10, angle 45\degre, puissance du bruit : 30 dbW), $\gamma = 0.001$, où l'image produite devient illisible. Cela montre les limites de l'algorithme qui peut également dégrader l'image de départ.
+	
+	\begin{figure}[!h]
+		\begin{center}			
+			\includegraphics[scale=0.4]{Img/echec}
+		\end{center}
+		\caption{Exemple d'image dégradée}
+	\end{figure}
+	
+	Une première constatation s'impose : on arrive très difficilement à améliorer la MSE et le PSNR avec ce traitement de défloutage, et dans le cas du floutage par mouvement linéaire les résultats sont mauvais. Il est important de souligner que ces mesures ne permettent pas de traduire précisément la "netteté" de l'image qui est en soi l'objectif de ce traitement : elles ne mesurent qu'un écart entre l'image traitée et l'image d'origine. Néanmoins, leur évolution lors du réglage de $\gamma$ aide à choisir une valeur optimale.
+	
+	Deuxième conclusion : $\gamma$ influence fortement la qualité de l'image de sortie, et son bon réglage semble essentiel pour optimiser le résultat. Nous avons obtenu les meilleurs résultats pour des valeurs entre 0.01 et 0.1, au delà les effets dûs à l'amplification du bruit ou le flou deviennent prédominants.
+	
+	
+\section{Critique et domaine d'utilisation}
 
-\section{COPYRIGHT FORMS}
-\label{sec:copyright}
+	De par ses hypothèses faibles et sa simplicité de calcul, le filtrage CLS nous semble être intéressant pour les traitements de défloutage simples (mouvement linéaire, flou gaussien), même lorsque le noyau n'est pas connu précisément puisqu'on peut alors simplement procéder par itération. 
+	
+	Un algorithme d'optimisation de $\gamma$ pourra sans doute produire des résultats plus précis, cependant à notre sens si l'objectif est de produire des images plus nettes par exemple pour permettre de déchiffrer du texte, cette précaution n'est pas nécessaire puisqu'on obtient des résultats satisfaisant en procédant à l'aveugle (et nous préconisons de commencer avec $\gamma = 0.01$).
+	
+	Les cas où le filtrage CLS devient insuffisant sont les cas de floutage complexe (mouvement non linéaire par exemple), les cas où le floutage dépend de la position sur l'image (limite intrinsèque) et les cas où le bruit est trop complexe/fort pour permettre une approche classique de filtrage haute fréquence.
+	
+	
+\section{Conclusion}
 
-You must include your fully completed, signed IEEE copyright release form when
-form when you submit your paper. We {\bf must} have this form before your paper
-can be published in the proceedings.
+	L'algorithme de déconvolution par approche Constrained Least Squares, de par son implémentation rapide et ses résultats satisfaisants dans des cas simples de floutage, nous semble être un outil essentiel dans la panoplie des méthodes de restauration d'image.
 
-\section{REFERENCES}
-\label{sec:ref}
+\nocite{*} 
+\bibliographystyle{plain}
+\bibliography{strings}
 
-List and number all bibliographical references at the end of the
-paper. The references can be numbered in alphabetic order or in
-order of appearance in the document. When referring to them in
-the text, type the corresponding reference number in square
-brackets as shown at the end of this sentence \cite{C2}. An
-additional final page (the fifth page, in most cases) is
-allowed, but must contain only references to the prior
-literature.
 
-% References should be produced using the bibtex program from suitable
-% BiBTeX files (here: strings, refs, manuals). The IEEEbib.bst bibliography
-% style file from IEEE produces unsorted bibliography list.
-% -------------------------------------------------------------------------
-\bibliographystyle{IEEEbib}
-\bibliography{strings,refs}
 
 \end{document}
