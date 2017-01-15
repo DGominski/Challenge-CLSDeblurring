@@ -15,7 +15,7 @@
 
 % Title.
 % ------
-\title{D\'{E}CONVOLUTION D'IMAGES FLOUES}
+\title{D\'{E}CONVOLUTION D'IMAGES FLOUES PAR FILTRAGE CLS}
 %
 % Single address.
 % ---------------
@@ -24,7 +24,7 @@
 %
 
 
-\name{\qquad Julien Guichon \qquad Dimitri Gominski}
+\name{\qquad Julien Guichon \qquad Dimitri Gominski \qquad \qquad}
 
 \address{}
 	
@@ -35,8 +35,9 @@
 %
 \begin{abstract}
 	
-	Image deblurring is a famous inverse problem in image processing, and can be frustrating because of the lack of information to retrieve the original image, often noisy and/or blurred with complex camera motion. It implies that the solution has to make assumptions on the acquisition system, and has to be robust against the heavy impact noise can have through the various treatments.
-	This reports study the performance and the limitations of the Constrained Least Squares (CLS ) approach. We also show compare it to other famous algorithm, in order to determine under which conditions it should be use.
+	Image deblurring is a famous inverse problem in image processing, and can be frustrating because of the lack of information to retrieve the original image, often noisy and/or blurred with complex camera motion. It implies that the solution has to make assumptions on the acquisition system or the original image, and has to be robust against the heavy impact noise can have through the treatment.
+	
+	This reports study the performance and the limitations of the Constrained Least Squares (CLS ) approach. We also compare it to other famous algorithm, in order to determine under which conditions it should be use.
 	
 \end{abstract}
 %
@@ -44,27 +45,74 @@
 %
 \section{Introduction}
 \label{sec:intro}
-	Le
 
-\section{\'{E}TUDE BIBLIOGRAPHIQUE CHRONOLOGIQUE}
+	Le traitement de défloutage revient en termes mathématiques à effectuer une déconvolution sur l'image floutée. En effet, si $f(x,y)$ désigne l'image d'entrée, un "floutage" linéaire et indépendant de la position est modélisé par une opération de convolution par un noyau $h(x,y)$ qui donne l'image floutée $g(x,y)$ :
+	$$g(x,y) = f(x,y) \otimes h(x,y)$$ 
+	
+	Dans ce cas, l'opération rigoureusement inverse de la convolution (déconvolution), correspondant à la résolution d'un système d'équations, suffit à retrouver exactement l'image de départ.
+	
+	Mais l'image d'entrée présentant systématiquement un bruit dû à l'acquisition, et les traitements numériques étant intrinsèquement sources de bruit, nous devons considérer un bruit additif n(x,y) : 
+	$$g(x,y) = f(x,y) \otimes h(x,y) + n(x,y)$$ 
+	
+	Et c'est ce bruit qui complique grandement les calculs, puisque l'opération de déconvolution va l'amplifier au point de rendre l'image de sortie complètement inutilisable [2].
+	
+	Pour simplifier les notations et calculs, passons en calcul matriciel dans le domaine fréquentiel : 
+	$$G = F * H + N$$
+	
+	Il existe 2 familles d'algorithmes de défloutage : les algorithmes qui supposent le noyau de floutage connu ($H$), et les algorithmes "à l'aveugle" où aucune supposition n'est faite sur le processus de floutage.
+	
+	
+
+\section{Floutages usuels}
 \label{sec:format}
 
-	Dès 1985, T. Tsukiyama et Y. Shirai [5] ont proposé une technique rudimentaire d'identification humaine en travaillant avec l'intensité pixel par pixel.
+	Le floutage peut être dû : 
+	\begin{itemize}
+	\item à des mouvements intempestifs du système d'acquisition ou de l'objet lors de la prise
+	\item à des perturbations optiques lors du passage des rayons lumineux dans certains milieux (verre, eau)
+	\item à une modification de la distance focale pendant la prise (zoom/dézoom, parfois voulu)
+	\end{itemize}
 
-	En 1997 est proposée au MIT [4] une technique innovante de description des formes basée sur les ondelettes de Haar, associée à un classifieur SVM. L'idée de séparer descripteur et classifieur est depuis devenue un standard dans ce domaine.
+	On caractérise ce floutage par un noyau $h(x,y)$. Cette fonction qu'on appelle PSF (\textit{Point Spread Function}) donne la réponse d'un théorique "système de floutage" (système qui donnerait l'image de sortie floutée à partir de l'image d'entrée) à une entrée correspondant à un point lumineux au centre de l'image (impulsion lumineuse). Son équivalent fréquentiel est appelé OTF (\textit{Optical Transfer Function}). Ci-dessous deux exemples de noyaux usuels :
+	
+	\begin{figure}[h]
+		\begin{center}			
+			\includegraphics[scale=0.3]{Img/blurkernel_gauss}
+		\end{center}
+		\caption{Noyau de floutage gaussien}
+	\end{figure}
 
-	En 1998, cette technique est perfectionnée [6] pour la rendre universelle en incluant un apprentissage le plus complet possible avec un set de données dédiées, pour permettre l'exécution dans des conditions variées. L'article introduit également la notion d'échelle variable pour la fenêtre de détection.
+	
+	\begin{figure}[h]
+	\begin{center}			
+		\includegraphics[scale=0.48]{Img/blurkernel_linear}
+	\end{center}
+	\caption{Noyau de floutage linéaire}
+	\end{figure}
 
-	Dalal \& Triggs [2] publient en 2005 un article de référence dans le domaine (+6000 citations). Ils expliquent une méthode complète, d'implémentation relativement simple, pour mettre en place une chaîne de détection de performances correctes. Leur méthode repose sur l'histogramme des gradients orientés pour décrire la forme d'un piéton, et la décision se fait avec une SVM (support vector machine) linéaire.
+	Le noyau linéaire correspond par exemple à un mouvement linéaire de l'appareil pendant la prise, et le noyau gaussien à une capture à travers du verre (diffusion).
+	Ces exemples étant très courants, nous ferons notre étude de l'algorithme CLS sur ces deux noyaux.
+	
 
-	Depuis, de nombreuses nouvelles approches ont été proposées, citons entre autres l'utilisation des informations de couleur [8], du mouvement [10], du bootstrapping (réutilisation des résultats, re-training) [8], de très larges sets de données d'apprentissages acquises par data-mining [11]  \textit{etc.}, avec la problématique du temps de calcul toujours au coeur du problème [9].
-
-
-\section{CONTEXTE}
+\section{Approches classiques - bibliographie}
 \label{sec:pagestyle}
 
-	Dans le cadre de l'étude de faisabilité d'un algorithme de détection en temps réel à 95\% de précision, nous disposons d'un set de données d'entrées dans des conditions relativement favorables (voir Figure 1). La caméra fournissant ces images est fixe, les seuls évènements d'occlusion concernent les croisements de piétons, et la zone concernée est une section de route fréquentée uniquement par des piétons, ce qui limite les risques de confusion avec du mobilier urbain ou des véhicules. Les seules contraintes sont l'orientation légèrement verticale de la caméra (ce qui limite la surface identifiable du corps humain) et la profondeur de champ qui implique de devoir gérer les changements d'échelle.
-
+	Plusieurs méthodes ont été proposées pour trouver une estimation correcte $\hat f$ de l'image d'origine $f$ à partir de la sortie $g$, en supposant le noyau de floutage $h$ connu.
+	
+	De manière générale, l'idée pour pouvoir effectuer une déconvolution en limitant les effets du bruit est de le filtrer aux fréquences concernées. Aux fréquences non impactées par le bruit, l'opération dans le domaine fréquentiel doit idéalement être une inversion, en effet si $N(f_1,f_2) = 0$, on a $G(f_1,f_2) = \hat F(f_1,f_2) * H(f_1,f_2)$ donc :
+	$$\hat F(f_1,f_2) = G(f_1,f_2) * H^{-1}(f_1,f_2)$$
+	
+	Application du filtre de Wiener qui fait usage de la répartition spectrale du signal et du bruit supposées connues, la déconvolution de Wiener [4] propose une estimation $\hat F$ comme suit :
+	$$\hat F = \frac {1}{H} \bigg[ \frac {|H|^2}{|H|^2 + \frac {|N|^2}{|F|^2} } \bigg] * G$$
+	
+	On voit que le filtre appliqué à G est lié à l'évolution du rapport signal/bruit $\frac{|F|^2}{|N|^2}$ dans le domaine fréquentiel, de manière à ce que les fréquences polluées ($\frac{1}{SNR} { \rightarrow +\infty}$) soient éliminées avec l'augmentation du dénominateur, tandis qu'aux fréquences non polluées ($\frac{1}{SNR} { \rightarrow 0}$) on fasse rigoureusement une inversion de $H$.
+	
+	Cette opération revient à minimiser l'erreur quadratique moyenne entre l'image d'entrée et son estimation, son défaut est de faire des hypothèses fortes sur le bruit et l'image d'entrée qui ne sont pas toujours disponibles.
+	
+	
+	
+	
+	
 \section{TYPE-STYLE AND FONTS}
 \label{sec:typestyle}
 

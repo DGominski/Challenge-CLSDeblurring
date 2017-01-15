@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  12 JAN 2017 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  15 JAN 2017 14:05
 entering extended mode
 **./Rapport.tex
 (Rapport.tex
@@ -562,60 +562,65 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
 
-Overfull \hbox (4.3635pt too wide) in paragraph at lines 45--46
-\OT1/ptm/m/n/10 de pi[]etons dans les syst[]emes num[]eriques est une probl[]em
-atique
+Overfull \hbox (9.97343pt too wide) in paragraph at lines 49--50
+[]\OT1/ptm/m/n/10 Le trai-te-ment de d[]efloutage re-vient en termes math[]emat
+iques
  []
 
 
-Underfull \vbox (badness 1596) has occurred while \output is active []
-
-
-Overfull \hbox (0.13757pt too wide) in paragraph at lines 62--63
-\OT1/ptm/m/n/10 dans le do-maine (+6000 ci-ta-tions). Ils ex-pliquent une m[]et
-hode
+Underfull \hbox (badness 1742) in paragraph at lines 52--53
+\OT1/ptm/m/n/10 d'un syst[]eme d'[]equations, suf-fit []a re-trou-ver exac-te-m
+ent
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 62--63
-\OT1/ptm/m/n/10 en place une cha[]ne de d[]etection de per-for-mances cor-
+Underfull \hbox (badness 1097) in paragraph at lines 72--73
+[][]\OT1/ptm/m/n/10 a des per-tur-ba-tions op-tiques lors du pas-sage des
  []
 
+<Img/blurkernel_gauss.png, id=1, 263.48438pt x 262.73157pt>
+File: Img/blurkernel_gauss.png Graphic file (type png)
 
-Underfull \hbox (badness 1776) in paragraph at lines 64--65
-[]\OT1/ptm/m/n/10 Depuis, de nom-breuses nou-velles ap-proches ont []et[]e
- []
+<use Img/blurkernel_gauss.png>
+Package pdftex.def Info: Img/blurkernel_gauss.png used on input line 80.
+(pdftex.def)             Requested size: 79.04591pt x 78.82007pt.
+
+<Img/blurkernel_linear.png, id=3, 170.13562pt x 170.13562pt>
+File: Img/blurkernel_linear.png Graphic file (type png)
+
+<use Img/blurkernel_linear.png>
+Package pdftex.def Info: Img/blurkernel_linear.png used on input line 88.
+(pdftex.def)             Requested size: 81.66415pt x 81.66415pt.
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 64--65
-\OT1/ptm/m/n/10 pro-pos[]ees, ci-tons entre autres l'uti-li-sa-tion des in-for-
-ma-
- []
 
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-
-] (Rapport.bbl [2])
-[3
+ <./Img/blurkernel_gauss.png> <./Img/blurkernel_linear.png>] [2]
+(Rapport.bbl) [3
 
 ] (Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 3592 strings out of 493333
- 47146 string characters out of 3139189
- 122182 words of memory out of 3000000
- 7068 multiletter control sequences out of 15000+200000
+ 3605 strings out of 493333
+ 47436 string characters out of 3139189
+ 124202 words of memory out of 3000000
+ 7077 multiletter control sequences out of 15000+200000
  16216 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,30p,820b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,7n,30p,511b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
-mes/utmri8a.pfb>
-Output written on Rapport.pdf (3 pages, 66769 bytes).
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on Rapport.pdf (3 pages, 131822 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
