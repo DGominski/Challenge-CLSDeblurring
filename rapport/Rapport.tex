@@ -108,8 +108,12 @@
 	On voit que le filtre appliqué à G est lié à l'évolution du rapport signal/bruit $\frac{|F|^2}{|N|^2}$ dans le domaine fréquentiel, de manière à ce que les fréquences polluées ($\frac{1}{SNR} { \rightarrow +\infty}$) soient éliminées avec l'augmentation du dénominateur, tandis qu'aux fréquences non polluées ($\frac{1}{SNR} { \rightarrow 0}$) on fasse rigoureusement une inversion de $H$.
 	
 	Cette opération revient à minimiser l'erreur quadratique moyenne entre l'image d'entrée et son estimation, son défaut est de faire des hypothèses fortes sur le bruit et l'image d'entrée qui ne sont pas toujours disponibles.
+	\\
 	
+	Les papiers [5] et [6] proposent de décomposer la matrice $H$, de manière à fournir des coefficients caractéristiques sur lesquels on peut agir pour réduire les effets du bruit, notamment avec la décomposition SVD qui fournit la décomposition suivante d'une matrice M :
+	$$ M = U \Sigma V^*$$
 	
+	Avec \Sigma matrice diagonale des coefficients
 	
 	
 	
