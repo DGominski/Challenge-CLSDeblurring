@@ -69,12 +69,4 @@ subplot(1,3,1);imagesc(img);colormap(gray);title('Image originale');
 subplot(1,3,2);imagesc(imgMotion);colormap(gray);title('Image floutée');
 subplot(1,3,3);imagesc(abs(ifft2(F)));colormap(gray);title('Image reconstruite (CLS)');
 
-%% Motion 
-% Construct an ideal line segment with the desired length and angle,
-% centered at the center coefficient of h.
-% For each coefficient location (i,j), compute the nearest 
-% distance between that location and the ideal line segment.
-% h = max(1 - nearest_distance, 0);
-% Normalize h:h = h/(sum(h(:)))
-
 
