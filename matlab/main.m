@@ -2,14 +2,14 @@ clear all;
 close all;
 clc;
 
-g = 10;
+g = 0.1;
 
 E = rgb2gray(imread('lena.bmp'));
 figure;
 imagesc(E); colormap gray;
 
-%K = fspecial('gaussian',[7 7],2);
-K = fspecial('motion',20,50);
+K = fspecial('gaussian',[7 7],2);
+% K = fspecial('motion',20,50);
 S = imfilter(E,K);
 
 NOISE = wgn(512,512,20);
