@@ -151,9 +151,7 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuFile->addAction(actionOpen);
-        menuFile->addAction(actionSave);
         menuFile->addAction(actionAbout);
-        menuFile->addAction(actionExit);
 
         retranslateUi(MainWindow);
 
@@ -174,7 +172,7 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "Sigma", 0));
         label_3->setText(QApplication::translate("MainWindow", "Window Size", 0));
         pushButtonOk->setText(QApplication::translate("MainWindow", "Apply", 0));
-        groupBox_3->setTitle(QApplication::translate("MainWindow", "Noyau", 0));
+        groupBox_3->setTitle(QApplication::translate("MainWindow", "Kernel", 0));
         radioButtonGauss->setText(QApplication::translate("MainWindow", "Gaussian filters", 0));
         radioButtonMotion->setText(QApplication::translate("MainWindow", "Motion filters", 0));
         label_5->setText(QApplication::translate("MainWindow", "Gamma (Laplacian)", 0));

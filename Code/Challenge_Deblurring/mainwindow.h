@@ -28,8 +28,6 @@ private:
 
 private slots:
     void openFileClick(void);
-    void saveFileClick(void);
-    void exitFileClick(void);
     void aboutFileClick(void);
 
     void okClick(void);

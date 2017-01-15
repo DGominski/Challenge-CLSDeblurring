@@ -16,7 +16,6 @@ SOURCES += main.cpp\
     deblurring.cpp
 
 HEADERS  += mainwindow.h \
-    cvmat2qpixorqimg.h \
     deblurring.h
 
 FORMS    += mainwindow.ui

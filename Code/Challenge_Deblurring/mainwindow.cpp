@@ -36,8 +36,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /* Connection Menu */
     connect(ui->actionOpen,SIGNAL(triggered(bool)),this,SLOT(openFileClick()));
-    connect(ui->actionSave,SIGNAL(triggered(bool)),this,SLOT(saveFileClick()));
-    connect(ui->actionExit,SIGNAL(triggered(bool)),this,SLOT(exitFileClick()));
     connect(ui->actionAbout,SIGNAL(triggered(bool)),this,SLOT(aboutFileClick()));
 
     /* Apply */
@@ -51,7 +49,6 @@ MainWindow::MainWindow(QWidget *parent) :
     /* Init */
     ui->groupBoxGauss->setEnabled(true);
     ui->groupBoxMotion->setEnabled(false);
-    fileNameIn = "lena.bmp";
 }
 
 
@@ -70,16 +67,6 @@ void MainWindow::openFileClick(void)
 }
 
 
-void MainWindow::saveFileClick(void)
-{
-
-}
-
-void MainWindow::exitFileClick(void)
-{
-    delete ui;
-}
-
 void MainWindow::GaussSelection(void)
 {
     ui->groupBoxGauss->setEnabled(true);
@@ -97,95 +84,121 @@ void MainWindow::aboutFileClick(void)
 {
     QString txt;
 
-    txt = "Déconvolution : rendre nette une image floue\n\n";
-    txt += "écrite par :\n";
+    txt = "Image deconvolution deblurring\n\n";
+    txt += "written by :\n";
     txt += "\t- Dimitri GOMINSKI\n";
     txt += "\t- Julien GUICHON\n";
     txt += "\n";
     txt += "INSA GEA 2014-2017";
 
-    QMessageBox::information(this,"Information",txt);
+    QMessageBox::information(this,"Note",txt);
 }
 
 void MainWindow::okClick(void)
 {
     int flagOk = 0;
-    Mat I = imread(fileNameIn);
     Mat img;
-    cvtColor( I, img, CV_RGB2GRAY );
+    QString txt;
 
-    deblurring::deblurringParamStruct delubrringParam;
 
-    std::ostringstream tilte;
-    std::ostringstream tilteSave;
-    if(ui->radioButtonGauss->isChecked())
+    if(fileNameIn.empty() == false)
     {
-        delubrringParam.flagMotion = 0;
-        delubrringParam.flagGauss = 1;
+        Mat I = imread(fileNameIn);
+        cvtColor( I, img, CV_RGB2GRAY );
 
-        delubrringParam.angleDeg = 0;
+        deblurring::deblurringParamStruct delubrringParam;
 
-        delubrringParam.gamma = ui->doubleSpinBoxGamma->value();
-        delubrringParam.ksize = ui->spinBoxSizeGauss->value();
-        delubrringParam.sigma = ui->doubleSpinBoxSigma->value();
-
-        tilte << "Output : " << "ga = " << delubrringParam.gamma << "  sig = " << delubrringParam.sigma << "  W.size = " << delubrringParam.ksize;
-        tilteSave << "ga=" << delubrringParam.gamma << "_sig=" << delubrringParam.sigma << "_Wsize=" << delubrringParam.ksize<<".bmp";
-
-        if((delubrringParam.gamma == 0) | (delubrringParam.sigma == 0))
+        std::ostringstream tilte;
+        std::ostringstream tilteSave;
+        if(ui->radioButtonGauss->isChecked())
         {
-            flagOk = 0;
+            delubrringParam.flagMotion = 0;
+            delubrringParam.flagGauss = 1;
 
-            QString txt;
-            txt = "Problème avec Gamma ou Sigma\n\n";
-            txt += "Gamma > 0\n";
-            txt += "Sigma > 0\n";
+            delubrringParam.angleDeg = 0;
 
-            QMessageBox::information(this,"Erreur",txt);
+            delubrringParam.gamma = ui->doubleSpinBoxGamma->value();
+            delubrringParam.ksize = ui->spinBoxSizeGauss->value();
+            delubrringParam.sigma = ui->doubleSpinBoxSigma->value();
+
+            tilte << "Output : " << "ga = " << delubrringParam.gamma << "  sig = " << delubrringParam.sigma << "  W.size = " << delubrringParam.ksize;
+            tilteSave << "ga=" << delubrringParam.gamma << "_sig=" << delubrringParam.sigma << "_Wsize=" << delubrringParam.ksize<<".bmp";
+
+            if((delubrringParam.gamma == 0) | (delubrringParam.sigma == 0))
+            {
+                flagOk = 0;
+
+                txt = "Error with Gamma ou Sigma value !!!\n\n";
+                txt += "Gamma > 0\n";
+                txt += "Sigma > 0\n";
+
+                QMessageBox::information(this,"Error",txt);
+            }
+            else
+            {
+                 flagOk = 1;
+            }
         }
-        else
+        if(ui->radioButtonMotion->isChecked())
         {
-             flagOk = 1;
+            delubrringParam.flagMotion = 1;
+            delubrringParam.flagGauss = 0;
+
+            delubrringParam.angleDeg = ui->spinBoxAngle->value();
+            delubrringParam.gamma = ui->doubleSpinBoxGamma->value();
+            delubrringParam.ksize = ui->spinBoxSizeMotion->value();
+
+            delubrringParam.sigma = 0;
+
+            tilte << "Output : " << "ga = " << delubrringParam.gamma << "  angleDeg = " << delubrringParam.angleDeg << "  W.size = " << delubrringParam.ksize;
+            tilteSave << "ga=" << delubrringParam.gamma << "_angleDeg=" << delubrringParam.angleDeg << "_Wsize=" << delubrringParam.ksize<<".bmp";
+
+            if(delubrringParam.gamma == 0)
+            {
+                flagOk = 0;
+
+                txt = "Error with Gamma !!!\n\n";
+                txt += "Gamma > 0\n";
+
+                QMessageBox::information(this,"Error",txt);
+            }
+            else
+            {
+                 flagOk = 1;
+            }
+        }
+
+
+        if(flagOk == 1)
+        {
+
+            Mat outCompute;
+            outCompute = deblurring::ComptueDFTandIDFT(img,delubrringParam);
+
+            Mat outComputeCvt;
+            outCompute.convertTo(outComputeCvt, CV_8U);
+
+
+            imshow(tilte.str(), outComputeCvt);
+
+            //show the image
+            imshow("Original Image", img);
+
+            //imwrite(tilteSave.str(),outComputeCvt);
+
+            // Wait until user press some key
+            waitKey(0);
         }
     }
-    if(ui->radioButtonMotion->isChecked())
-    {
-        delubrringParam.flagMotion = 1;
-        delubrringParam.flagGauss = 0;
-
-        delubrringParam.angleDeg = ui->spinBoxAngle->value();
-        delubrringParam.gamma = ui->doubleSpinBoxGamma->value();
-        delubrringParam.ksize = ui->spinBoxSizeMotion->value();
-
-        delubrringParam.sigma = 0;
-
-        tilte << "Output : " << "ga = " << delubrringParam.gamma << "  angleDeg = " << delubrringParam.angleDeg << "  W.size = " << delubrringParam.ksize;
-        tilteSave << "ga=" << delubrringParam.gamma << "_angleDeg=" << delubrringParam.angleDeg << "_Wsize=" << delubrringParam.ksize<<".bmp";
-
-        flagOk = 1;
-    }
-
-
-    if(flagOk == 1)
+    else
     {
 
-        Mat outCompute;
-        outCompute = deblurring::ComptueDFTandIDFT(img,delubrringParam);
+        txt = "Error with image data\n\n";
+        txt += "Is it load ?";
 
-        Mat outComputeCvt;
-        outCompute.convertTo(outComputeCvt, CV_8U);
-
-
-        imshow(tilte.str(), outComputeCvt);
-
-        //show the image
-        imshow("Original Image", img);
-
-        imwrite(tilteSave.str(),outComputeCvt);
-
-        // Wait until user press some key
-        waitKey(0);
+        QMessageBox::information(this,"Error",txt);
     }
+
 }
 
 

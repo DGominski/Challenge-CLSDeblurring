@@ -52,7 +52,6 @@ OBJECTS       = release/main.o \
 		release/moc_mainwindow.o
 
 DIST          =  ..\challenge_deblurring\mainwindow.h \
-		..\challenge_deblurring\cvmat2qpixorqimg.h \
 		..\challenge_deblurring\deblurring.h ..\challenge_deblurring\main.cpp \
 		..\challenge_deblurring\mainwindow.cpp \
 		..\challenge_deblurring\deblurring.cpp
@@ -469,57 +468,6 @@ release/mainwindow.o: ../challenge_deblurring/mainwindow.cpp ../challenge_deblur
 		H:/Qt/5.5/mingw492_32/include/QtGui/QImage \
 		H:/Qt/5.5/mingw492_32/include/QtGui/QPixmap \
 		ui_mainwindow.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/QVariant \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QAction \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qaction.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qactiongroup.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QApplication \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qapplication.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qcoreapplication.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qeventloop.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qdesktopwidget.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qguiapplication.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qinputmethod.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QButtonGroup \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qbuttongroup.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QDoubleSpinBox \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qspinbox.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractspinbox.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qvalidator.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qregularexpression.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QGroupBox \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qgroupbox.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qframe.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QHeaderView \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qheaderview.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractitemview.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractscrollarea.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qitemselectionmodel.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractitemdelegate.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qstyleoption.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qslider.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractslider.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qstyle.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qtabbar.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qrubberband.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QLabel \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qlabel.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QMenu \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qmenu.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QMenuBar \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qmenubar.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QPushButton \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qpushbutton.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qabstractbutton.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QRadioButton \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qradiobutton.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QSpinBox \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QStatusBar \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qstatusbar.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QToolBar \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/qtoolbar.h \
-		H:/Qt/5.5/mingw492_32/include/QtWidgets/QWidget \
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/highgui.hpp \
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/core.hpp \
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/core/cvdef.h \
@@ -638,6 +586,9 @@ release/mainwindow.o: ../challenge_deblurring/mainwindow.cpp ../challenge_deblur
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/deblurring.hpp \
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/wobble_suppression.hpp \
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/ring_buffer.hpp \
+		H:/Qt/5.5/mingw492_32/include/QtWidgets/QLabel \
+		H:/Qt/5.5/mingw492_32/include/QtWidgets/qlabel.h \
+		H:/Qt/5.5/mingw492_32/include/QtWidgets/qframe.h \
 		H:/Qt/5.5/mingw492_32/include/QtWidgets/QFileDialog \
 		H:/Qt/5.5/mingw492_32/include/QtWidgets/qfiledialog.h \
 		H:/Qt/5.5/mingw492_32/include/QtCore/qdir.h \
