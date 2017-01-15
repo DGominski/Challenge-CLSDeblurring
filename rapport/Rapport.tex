@@ -113,29 +113,41 @@
 	Les papiers [5] et [6] proposent de décomposer la matrice $H$, de manière à fournir des coefficients caractéristiques sur lesquels on peut agir pour réduire les effets du bruit, notamment avec la décomposition SVD qui fournit la décomposition suivante d'une matrice M :
 	$$ M = U \Sigma V^*$$
 	
-	Avec $\Sigma$ matrice diagonale des coefficients. Une telle décomposition facilite la résolution du problème inverse du floutage, mais se révèle très conséquent en temps de calcul.
+	Avec $\Sigma$ matrice diagonale des coefficients. Une telle décomposition facilite la résolution du problème inverse du floutage, mais se révèle très conséquente en temps de calcul.
+	\\
 	
-	Des approches statistiques [7] ont également été essayées, où une première estimation du noyau de floutage est donnée puis affinée au cours de plusieurs itérations. 
+	Des approches statistiques [7] ont également été essayées, où une première estimation du noyau de floutage est donnée puis affinée au cours de plusieurs itérations, selon un critère de vraisemblance à minimiser.
+	
+	Plus rapides, ces méthodes permettent également de traiter les images floutées selon des noyaux complexes.
+	\newpage
 	
 	
-\section{TYPE-STYLE AND FONTS}
+\section{Approche Constrained Least Squares}
 \label{sec:typestyle}
 
-To achieve the best rendering both in printed proceedings and electronic proceedings, we
-strongly encourage you to use Times-Roman font.  In addition, this will give
-the proceedings a more uniform look.  Use a font that is no smaller than nine
-point type throughout the paper, including figure captions.
-
-In nine point type font, capital letters are 2 mm high.  {\bf If you use the
-smallest point size, there should be no more than 3.2 lines/cm (8 lines/inch)
-vertically.}  This is a minimum spacing; 2.75 lines/cm (7 lines/inch) will make
-the paper much more readable.  Larger type sizes require correspondingly larger
-vertical spacing.  Please do not double-space your paper.  TrueType or
-Postscript Type 1 fonts are preferred.
-
-The first paragraph in each section should not be indented, but all the
-following paragraphs within the section should be indented as these paragraphs
-demonstrate.
+	Très similaire au filtre de Wiener, la méthode Constrained Least Squares, sous la contrainte $||G - H \hat{F}||^2 = ||N||^2$, vise à minimiser la quantité :
+	$$\sum\limits_{i=0}^{M-1} \sum\limits_{i=0}^{N-1} \big[\nabla ^2 f(x,y)]^2 $$
+	
+	Cette quantité traduisant l'homogénéité ("smoothness") de l'image. Cela revient à minimiser la fonction d'erreur :
+	$$||g - h \otimes \hat{f}||^2 _2 + \gamma ||\Delta \hat{f}||^2 _2$$
+	
+	Il n'y a ici pas de présupposé sur l'image de départ.
+	En domaine fréquentiel la solution prend la forme :
+	$$\hat F = \frac {1}{H} \bigg[ \frac {|H|^2}{|H|^2 + \gamma |P|^2 } \bigg] * G$$ 
+	
+	où P est l'opérateur laplacien en domaine fréquentiel : 
+	$$ P = DFT\bigg\{\begin{bmatrix}
+		0 & 1 & 0 \\
+		1 & 4 & 1 \\
+		0 & 1 & 0 
+		\end{bmatrix}\bigg\}$$
+		
+	et $\gamma$ est un paramètre à ajuster pour satisfaire la contrainte.
+	\\
+	
+	Notons que l'opérateur Laplacien en domaine fréquentiel possède une amplitude forte pour les fréquences élevées (d'où son utilisation en détection de contour). Dans le cas présent, se trouvant au dénominateur, il aura tendance à \textit{diminuer} l'effet des hautes fréquences, où se trouve généralement le bruit, tandis qu'en basses fréquences on aura comme pour le filtre de Wiener une inversion simple de $H$.
+	
+	$\gamma$ permet d'ajuster un compromis entre le bruit et la précision du défloutage. Son réglage peut se faire à l'aveugle selon le résultat voulu, ou par calcul en satisfaisant la contrainte sus-citée. 
 
 \section{MAJOR HEADINGS}
 \label{sec:majhead}
