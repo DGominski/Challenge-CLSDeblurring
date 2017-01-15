@@ -43,5 +43,3 @@ LIBS +=  -LH:/OpenCV3.2/opencv/build_qt_mingw/install/x86/mingw/bin \
     -lopencv_video320 \
     -lopencv_videoio320 \
     -lopencv_videostab320 \
-
-CONFIG += static -release
