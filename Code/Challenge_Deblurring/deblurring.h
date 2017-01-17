@@ -7,11 +7,8 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc.hpp>
 
-#include "cvmat2qpixorqimg.h"
-
 
 using namespace cv;
-using namespace ASM;
 
 class deblurring
 {
@@ -33,7 +30,7 @@ public:
     static Mat Psf2otfPerso(Mat psf , Size size);
     static Mat LapKernel(Size imgSize);
     static Mat GaussKernel(double sigma,int ksize,Size imgSize);
-    static Mat ComptueDFTandIDFT(Mat img,deblurringParamStruct deblurringParam);
+    static Mat deconvolution(Mat img,deblurringParamStruct deblurringParam);
 
 //signals:
 

@@ -96,7 +96,7 @@ Mat deblurring::LapKernel(Size imgSize)
 }
 
 
-Mat deblurring::ComptueDFTandIDFT(Mat img,deblurringParamStruct deblurringParam)
+Mat deblurring::deconvolution(Mat img,deblurringParamStruct deblurringParam)
 {
     /* Passage d'une image en complex */
     Mat planes[] = {Mat_<float>(img), Mat::zeros(img.size(), CV_32F)};
@@ -134,10 +134,24 @@ Mat deblurring::ComptueDFTandIDFT(Mat img,deblurringParamStruct deblurringParam)
 
     }
 
+    /* Resized of matrix */
+    Mat HfctResized;
+    HfctResized = Hfct(Rect(0, 0,img.rows, img.cols));
+    Hfct.deallocate();
+    Hfct = HfctResized;
+
+
+    Mat lapKfctResized;
+    lapKfctResized = lapKfct(Rect(0, 0,img.rows, img.cols));
+    lapKfct.deallocate();
+    lapKfct = lapKfctResized;
+
+
     Mat H1,H2,P,out;
 
     /* Conjugé de H */
     Mat ones[] = {Mat::ones(Hfct.size(),CV_32F), Mat::ones(Hfct.size(), CV_32F)};
+
     Mat complexIones;
     merge(ones, 2, complexIones);
     mulSpectrums(complexIones,Hfct,H1,0,true);
@@ -145,6 +159,7 @@ Mat deblurring::ComptueDFTandIDFT(Mat img,deblurringParamStruct deblurringParam)
 
     mulSpectrums(Hfct,Hfct,H2,0,true);
     mulSpectrums(lapKfct,lapKfct,P,0,true);
+
     mulSpectrums(H1/(H2+deblurringParam.gamma*P),imgComplexDFT,out,0,false);
 
     Mat outDFT;

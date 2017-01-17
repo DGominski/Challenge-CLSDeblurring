@@ -598,8 +598,6 @@ release/mainwindow.o: ../challenge_deblurring/mainwindow.cpp ../challenge_deblur
 		H:/Qt/5.5/mingw492_32/include/QtWidgets/QMessageBox \
 		H:/Qt/5.5/mingw492_32/include/QtWidgets/qmessagebox.h \
 		H:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
-		../challenge_deblurring/cvmat2qpixorqimg.h \
-		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/imgproc/imgproc.hpp \
 		../challenge_deblurring/deblurring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\challenge_deblurring\mainwindow.cpp
 
@@ -721,97 +719,7 @@ release/deblurring.o: ../challenge_deblurring/deblurring.cpp ../challenge_deblur
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/fast_marching_inl.hpp \
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/deblurring.hpp \
 		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/wobble_suppression.hpp \
-		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/ring_buffer.hpp \
-		../challenge_deblurring/cvmat2qpixorqimg.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/QDebug \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qdebug.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qalgorithms.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qglobal.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qconfig.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qfeatures.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qsystemdetection.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qprocessordetection.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qcompilerdetection.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qtypeinfo.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qtypetraits.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qsysinfo.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qlogging.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qflags.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qbasicatomic.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_bootstrap.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qgenericatomic.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_cxx11.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_gcc.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_msvc.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_armv7.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_armv6.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_armv5.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_ia64.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_mips.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_x86.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qatomic_unix.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qglobalstatic.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qmutex.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qnumeric.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qhash.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qchar.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qiterator.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qlist.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qrefcount.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qarraydata.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qbytearraylist.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qbytearray.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qnamespace.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qstring.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qstringbuilder.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qstringlist.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qregexp.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qstringmatcher.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qpair.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qmap.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qtextstream.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qiodevice.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qobject.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qobjectdefs_impl.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qcoreevent.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qscopedpointer.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qmetatype.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qvarlengtharray.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qcontainerfwd.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qisenum.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qobject_impl.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qlocale.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qvariant.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qshareddata.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qvector.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qpoint.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qset.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qcontiguouscache.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/QImage \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qimage.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qtransform.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qmatrix.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qpolygon.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qrect.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qmargins.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qsize.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qregion.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qwindowdefs.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qwindowdefs_win.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qdatastream.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qline.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qpainterpath.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qpaintdevice.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qrgb.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qpixelformat.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/QPixmap \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qpixmap.h \
-		H:/Qt/5.5/mingw492_32/include/QtGui/qcolor.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qsharedpointer.h \
-		H:/Qt/5.5/mingw492_32/include/QtCore/qsharedpointer_impl.h \
-		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/imgproc/imgproc.hpp
+		H:/OpenCV3.2/opencv/build_qt_mingw/install/include/opencv2/videostab/ring_buffer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\deblurring.o ..\challenge_deblurring\deblurring.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 

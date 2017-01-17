@@ -16,12 +16,10 @@
 #include <QMessageBox>
 #include <QDebug>
 
-#include "cvmat2qpixorqimg.h"
 
 #include "deblurring.h"
 
 using namespace cv;
-using namespace ASM;
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -106,25 +104,25 @@ void MainWindow::okClick(void)
         Mat I = imread(fileNameIn);
         cvtColor( I, img, CV_RGB2GRAY );
 
-        deblurring::deblurringParamStruct delubrringParam;
+        deblurring::deblurringParamStruct deblurringParam;
 
         std::ostringstream tilte;
         std::ostringstream tilteSave;
         if(ui->radioButtonGauss->isChecked())
         {
-            delubrringParam.flagMotion = 0;
-            delubrringParam.flagGauss = 1;
+            deblurringParam.flagMotion = 0;
+            deblurringParam.flagGauss = 1;
 
-            delubrringParam.angleDeg = 0;
+            deblurringParam.angleDeg = 0;
 
-            delubrringParam.gamma = ui->doubleSpinBoxGamma->value();
-            delubrringParam.ksize = ui->spinBoxSizeGauss->value();
-            delubrringParam.sigma = ui->doubleSpinBoxSigma->value();
+            deblurringParam.gamma = ui->doubleSpinBoxGamma->value();
+            deblurringParam.ksize = ui->spinBoxSizeGauss->value();
+            deblurringParam.sigma = ui->doubleSpinBoxSigma->value();
 
-            tilte << "Output : " << "ga = " << delubrringParam.gamma << "  sig = " << delubrringParam.sigma << "  W.size = " << delubrringParam.ksize;
-            tilteSave << "ga=" << delubrringParam.gamma << "_sig=" << delubrringParam.sigma << "_Wsize=" << delubrringParam.ksize<<".bmp";
+            tilte << "Output : " << "ga = " << deblurringParam.gamma << "  sig = " << deblurringParam.sigma << "  W.size = " << deblurringParam.ksize;
+            tilteSave << "ga=" << deblurringParam.gamma << "_sig=" << deblurringParam.sigma << "_Wsize=" << deblurringParam.ksize<<".bmp";
 
-            if((delubrringParam.gamma == 0) | (delubrringParam.sigma == 0))
+            if((deblurringParam.gamma == 0) | (deblurringParam.sigma == 0))
             {
                 flagOk = 0;
 
@@ -141,19 +139,19 @@ void MainWindow::okClick(void)
         }
         if(ui->radioButtonMotion->isChecked())
         {
-            delubrringParam.flagMotion = 1;
-            delubrringParam.flagGauss = 0;
+            deblurringParam.flagMotion = 1;
+            deblurringParam.flagGauss = 0;
 
-            delubrringParam.angleDeg = ui->spinBoxAngle->value();
-            delubrringParam.gamma = ui->doubleSpinBoxGamma->value();
-            delubrringParam.ksize = ui->spinBoxSizeMotion->value();
+            deblurringParam.angleDeg = ui->spinBoxAngle->value();
+            deblurringParam.gamma = ui->doubleSpinBoxGamma->value();
+            deblurringParam.ksize = ui->spinBoxSizeMotion->value();
 
-            delubrringParam.sigma = 0;
+            deblurringParam.sigma = 0;
 
-            tilte << "Output : " << "ga = " << delubrringParam.gamma << "  angleDeg = " << delubrringParam.angleDeg << "  W.size = " << delubrringParam.ksize;
-            tilteSave << "ga=" << delubrringParam.gamma << "_angleDeg=" << delubrringParam.angleDeg << "_Wsize=" << delubrringParam.ksize<<".bmp";
+            tilte << "Output : " << "ga = " << deblurringParam.gamma << "  angleDeg = " << deblurringParam.angleDeg << "  W.size = " << deblurringParam.ksize;
+            tilteSave << "ga=" << deblurringParam.gamma << "_angleDeg=" << deblurringParam.angleDeg << "_Wsize=" << deblurringParam.ksize<<".bmp";
 
-            if(delubrringParam.gamma == 0)
+            if(deblurringParam.gamma == 0)
             {
                 flagOk = 0;
 
@@ -165,7 +163,7 @@ void MainWindow::okClick(void)
             else
             {
                  flagOk = 1;
-            }
+            }  
         }
 
 
@@ -173,7 +171,7 @@ void MainWindow::okClick(void)
         {
 
             Mat outCompute;
-            outCompute = deblurring::ComptueDFTandIDFT(img,delubrringParam);
+            outCompute = deblurring::deconvolution(img,deblurringParam);
 
             Mat outComputeCvt;
             outCompute.convertTo(outComputeCvt, CV_8U);
